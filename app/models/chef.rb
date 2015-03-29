@@ -1,3 +1,3 @@
-class Chef <ActiveRecord::Base
+class Chef <  ActiveRecord::Base
   
 end
