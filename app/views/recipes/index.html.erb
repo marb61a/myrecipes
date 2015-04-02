@@ -1,15 +1,16 @@
 <h1> All Our Recipes </h1>
-</hr>
+<hr/>
 
 <% @recipes.each do |recipe| %>
   <div class="row">
     <div class="col-md-2">
       <section class="chef_info center">
-        
+        <%= gravatar_for recipe.chef, size: 100 %>
+        <h5>Chef Name : <%= recipe.chef.chefname %></h5>
       </section>
     </div>
     <div class="col-lg-8 well">
-     <h4><%= link_to recipe.name, " " %></h4>
+     <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
      <p><%= recipe.summary %></p>
      <p>
        <span class="quiet">
@@ -18,5 +19,5 @@
      </p>
     </div>
   </div>
-
+  <hr/>
 <% end %>
