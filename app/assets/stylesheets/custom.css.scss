@@ -84,6 +84,21 @@ h2 {
   border-radius: 10px;
 }
 
+.well{
+  background-color:#FBF26E;
+}
+
+input, textarea, select, .uneditable-input{
+  border: 1px solid #1E2221;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input{
+  height: auto !important;
+}
+
 .jumbotron {
   background: rgb(254,252,234); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(254,252,234,1) 0%, rgba(241,218,54,1) 100%); /* FF3.6+ */
