@@ -14,8 +14,9 @@
           <p>
             <strong>Steps:</strong>
           </p>
-          <%= @recipe.description %>
+          <%= simple_format(@recipe.description) %>
         </div>
+      <%= link_to "Edit This Recipe", edit_recipe_path(@recipe), class:"btn btn-success pull-right"%>  
   </div>
 </div>
 
