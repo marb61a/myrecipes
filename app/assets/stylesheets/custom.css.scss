@@ -110,3 +110,14 @@ background: linear-gradient(to bottom,  rgba(254,252,234,1) 0%,rgba(241,218,54,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
 
 }
+
+span.picture{
+  margin-top: 10px;
+  input{
+    border: 0;
+  }
+}
+
+.show_recipe{
+  margin: 10px 10px 10px 10px;
+}
