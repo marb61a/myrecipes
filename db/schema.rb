@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406104301) do
+ActiveRecord::Schema.define(version: 20150408102533) do
 
   create_table "chefs", force: true do |t|
     t.string   "chefname"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "likes", force: true do |t|
+    t.boolean "like"
+    t.integer "chef_id"
+    t.integer "recipe_id"
   end
 
   create_table "recipes", force: true do |t|
