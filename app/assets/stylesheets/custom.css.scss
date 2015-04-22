@@ -30,11 +30,12 @@ $navbar-default-color: $pale-blue;
 
 body {
   padding-top: 80px;
-  background-image: url('./assets/images/steaks_food_dinner_grilling.jpg') no-repeat center center fixed;
+  background-color: #E2FEFB;
 }
 
+
 .nav_ul_item {
-  padding-left: 25px;
+  padding-left: 30px;
   float: left;
   margin-top: 20px;
   
@@ -107,6 +108,7 @@ input{
   height: auto !important;
 }
 
+/* Gradients from ColorZilla */
 .jumbotron {
   background: rgb(254,252,234); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(254,252,234,1) 0%, rgba(241,218,54,1) 100%); /* FF3.6+ */
