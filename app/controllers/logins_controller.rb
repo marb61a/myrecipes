@@ -4,7 +4,7 @@ class LoginsController < ApplicationController
   end
   
   def create
-    chef = chef.find_by(email: params[:email])
+    chef = Chef.find_by(email: params[:email])
     if chef && chef.authenticate(params[:password])
       session[:chef_id] = chef.id
       flash[:success]= 'You Have Successfully Logged In'
@@ -22,3 +22,4 @@ class LoginsController < ApplicationController
   end
   
 end
+
