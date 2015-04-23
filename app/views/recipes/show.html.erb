@@ -16,7 +16,7 @@
     <% end %>
     <h3><%= @recipe.summary %></h3>
     <div class="show_recipe">
-      <%= image_tag(@recipe.picture.url, class: 'gravatar') if @recipe.picture? %>
+      <%= image_tag(@recipe.picture.url, size: "500x300", class: 'gravatar') if @recipe.picture? %>
     </div>
       <div class="well">
         <<% if @recipe.styles.any? %>
@@ -38,10 +38,26 @@
          <% end %>
        </div>
       </div>
-      <% if logged_in? and @recipe.chef == current_user %>
-        <%= link_to "Edit This Recipe", edit_recipe_path(@recipe), class:"btn btn-success pull-right"%> 
-      <% end %>
+    </div>
   </div>
-</div>
-
-<h5><%= link_to "Return to Recipes listing page", recipes_path, class:"btn btn-warning btn-small"%></h5>
+  <% if logged_in? %>
+    <div class="row">
+    	<div class="col-md-8">
+    		<%= render 'shared/page_title', title: "Review This Recipe" %>
+    				<%= form_for([@recipe, @review]) do |f| %>
+    				<%= f.label :Review %>
+    				<%= f.text_area :body, rows: 5  %>
+    			
+    				<%= f.submit "Create Review", class: "btn btn-success" %>
+    				<% end %>
+    	</div>
+    </div>
+  <% else %>
+  <p><%= link_to "Want to leave a review? Go Sign up!", register_path %></p>
+  <% end %>
+  <div class="row">
+  	<div class="col-md-8">
+  		<h2>Reviews</h2>
+  			<%= render @recipe.reviews %>
+  	</div>
+	</div>

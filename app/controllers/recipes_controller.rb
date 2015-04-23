@@ -2,7 +2,6 @@ class RecipesController < ApplicationController
   
   before_action :set_recipe, only: [:edit, :update, :show, :like]
   before_action :require_user, except: [:show, :index, :like]
-  before_action :require_user_like, only: [:like]
   before_action :require_same_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
   
@@ -11,7 +10,7 @@ class RecipesController < ApplicationController
   end
   
   def show
-
+    @review = Review.new
   end
   
   def new
@@ -37,7 +36,7 @@ class RecipesController < ApplicationController
   def update
     if @recipe.update(recipe_params)
       flash[:success] = "Your recipe was updated successfully"
-      redirect_to recipes_path
+      redirect_to recipe_path(@recipe)
     else
       render :edit
     end
@@ -88,5 +87,4 @@ class RecipesController < ApplicationController
     def admin_user
       redirect_to recipes_path unless current_user.admin?
     end
-  
 end

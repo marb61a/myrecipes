@@ -2,10 +2,10 @@
 
 <ul class="nav nav-tabs">
   <li class="active">
-    <%= link_to "Recipes", recipe_path%>
+    <%= link_to "Recipes", recipes_path%>
   </li>
-  <li class="active">
-    <%= link_to "Chefs", chef_path%>
+  <li>
+    <%= link_to "Chefs", chefs_path%>
   </li>
 </ul>
 
@@ -32,7 +32,6 @@
          <small> updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
        </span>
      </p>
-    </div>
     <div class="pull-right">
          <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
            <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= recipe.thumbs_up_total%> 
@@ -40,6 +39,7 @@
          <%= link_to like_recipe_path(recipe, like: false), method: :post do %>
            <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= recipe.thumbs_down_total%> 
          <% end %>
+    </div>
     </div>
     <div class="col-md-4">
       <%= image_tag(recipe.picture.url, size: '250x150', class:'gravatar') if recipe.picture? %>
@@ -49,3 +49,4 @@
 <% end %>
 
 <%= will_paginate @recipes %>
+

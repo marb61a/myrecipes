@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="well col-md-8 col-md-offset-2">
-      <%= form_for(@chef) do |f|%>
+      <%= form_for @chef do |f|%>
          <%= f.label :chefname %>
          <%= f.text_field :chefname %>
          
@@ -12,7 +12,8 @@
          <%= f.label :password %>
          <%= f.password_field :password %>
          
-         <%= f.submit(@chef.new_record? ? 'Register' : 'Edit Profile', class:"btn btn-success" )%>
+         <%= f.submit(@chef.new_record? ? "Register" : "Edit Profile", class:"btn btn-success" )%>
       <% end %>   
     </div>
 </div>   
+

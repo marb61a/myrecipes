@@ -11,12 +11,11 @@
             <li><%= link_to style.name, style_path(style) %></li>
           <% end %>
           <% if logged_in? %>
-            <li class="divider">
-              <li>
-                <%= link_to(new_style_path) do %>
-                  New Style
-                <% end %>
-              </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to(new_style_path) do %>
+                New Style
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -24,7 +23,7 @@
     </ul>
     <ul class="nav_ul_item">
       <li class="dropdown">
-        <%= link_to "#", class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+        <%= link_to "#", class: "btn btn-default btn-warning dropdown-toggle", "data-toggle" => "dropdown" do %>
           Ingredients  <b class="caret"></b>
         <% end %>
         <ul class="dropdown-menu">
@@ -32,13 +31,12 @@
             <li><%= link_to ingredient.name, ingredient_path(ingredient)%></li>
           <% end %>
           <% if logged_in? %>
-            <li class="divider">
+            <li class="divider"></li>
               <li>
-                <%= link_to(new_ingredient_path) do %>
+                <%= link_to new_ingredient_path  do %>
                   New Ingredient
                 <% end %>
               </li>
-            </li>
           <% end %>
         </ul>
       </li>
@@ -49,7 +47,7 @@
     </div>
     <ul class="nav_item">
       <li class="dropdown">
-        <%= link_to "#", class: "btn btn-default btn-denger dropdown-toggle", "data-toggle" => "dropdown" do %>
+        <%= link_to "#", class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
           <%= current_user.chefname %>, <b class="caret"></b>
         <% end %>
         <ul class="dropdown-menu">
@@ -67,3 +65,4 @@
     <% end %>
   </div>
 </header>
+

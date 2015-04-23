@@ -3,10 +3,8 @@ class ChefsController < ApplicationController
   before_action :set_chef, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update]
   
-  
-  
   def index
-    @chefs = Chef.paginate(page: params[:page], per_page: 5)
+    @chefs = Chef.paginate(page: params[:page], per_page: 3)
   end
   
   def new
@@ -39,6 +37,7 @@ class ChefsController < ApplicationController
   
   def show
     @recipes = @chef.recipes.paginate(page: params[:page], per_page: 3)
+    @review = Review.new
   end
   
   private
@@ -57,5 +56,17 @@ class ChefsController < ApplicationController
       end
     end
     
-    
 end
+
+	def update
+		
+		if @chef.update(chef_params)
+			flash[:success] = "Your account has been updated succesfully"
+			redirect_to chef_path(@chef) 
+		else
+			render 'edit'
+		end
+	end
+
+
+

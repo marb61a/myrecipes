@@ -10,11 +10,11 @@ Rails.application.routes.draw do
     member do
       post 'like'
     end
-    resources :comments, only: [:create, :edit, :update, :destroy]
-  end
+    resources :reviews
   
   resources :chefs, except: [:new, :destroy]do
   end
+
      get '/register', to: 'chefs#new'
      get '/login', to: 'logins#new'
      post 'login', to: 'logins#create'
@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   resources :ingredients, only: [:new, :create, :show]
 
 
-end
+  end
 
+end
