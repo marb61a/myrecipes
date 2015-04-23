@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
   
-  resources :chefs, except: [:new] do
+  resources :chefs, except: [:new, :destroy]do
   end
      get '/register', to: 'chefs#new'
      get '/login', to: 'logins#new'
