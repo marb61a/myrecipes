@@ -18,15 +18,12 @@
       <%= image_tag(@recipe.picture.url, size: "500x300", class: 'gravatar') if @recipe.picture? %>
     </div>
       <div class="well">
-        <<% if @recipe.styles.any? %>
-           <p>Style: <%= render @recipe.styles %></p>
-         <% end %>
-         <% if @recipe.ingredients.any? %>
-           <p>Ingredients: <%= render @recipe.ingredients %></p> 
-         <% end %>
-        <p>
-          <strong>Steps:</strong>
-        </p>
+			  <% if @recipe.styles.any? %>
+			    <p>Style: <%= render @recipe.styles %></p>
+			  <% end %>
+			  <% if @recipe.ingredients.any? %>
+			    <p>Ingredients: <%= render @recipe.ingredients %></p>
+			  <% end %>
        <%= simple_format(@recipe.description) %>
        <div class="pull-right">
          <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
