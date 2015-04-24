@@ -1,8 +1,7 @@
-<%= render 'shared/errors', obj: @comment %>
 <%= render 'shared/page_title', title: @recipe.name %>
 <div class="row">
   <div class="col-md-4 pull-right center">
-    <%= link_to gravatar_for (@recipe.chef, size: 200 ), chef_path(@recipe.chef)%>
+    <%= link_to gravatar_for(@recipe.chef, size: 200), chef_path(@recipe.chef) %>
     <p>
       <h5>Bought to you by <%= @recipe.chef.chefname %></h5>
     </p>
@@ -11,7 +10,7 @@
     <% if logged_in? and (@recipe.chef == current_user || current_user.admin?) %>
       <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: "btn btn-success pull-right" %>
     <% end %>
-    <% if current_user.admin? %>
+    <% if logged_in? and current_user.admin? %>
       <%= link_to "[Delete Recipe]", @recipe, method: :delete, data: { confirm: 'Are you sure?'} %>
     <% end %>
     <h3><%= @recipe.summary %></h3>
@@ -48,7 +47,7 @@
     				<%= f.label :Review %>
     				<%= f.text_area :body, rows: 5  %>
     			
-    				<%= f.submit "Create Review", class: "btn btn-success" %>
+    				<%= f.submit "Create a Review", class: "btn btn-success" %>
     				<% end %>
     	</div>
     </div>
@@ -61,3 +60,7 @@
   			<%= render @recipe.reviews %>
   	</div>
 	</div>
+	
+	<h5><%= link_to "Return to Recipe Listing", recipes_path, class: "btn border-blue-browse btn-small" %></h5>
+
+
