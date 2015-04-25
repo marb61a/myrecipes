@@ -2,12 +2,12 @@
 <%= render 'shared/errors', obj: @style %>
 
 <div class="row">
-    <div class="well col-md-8 col-md-offset-2">
-      <%= form_for @style do |f|%>
-         <%= f.label :name %>
-         <%= f.text_field :name %>
-        
-         <%= f.submit "Create Style", class:"btn btn-success" %>
-      <% end %>   
-    </div>
-</div> 
+	<div class="well col-md-8 col-md-offset-2">
+		<%= form_for @style do |f| %>
+		<%= f.label :Name %>
+		<%= f.text_field :name %>
+	
+		<%= f.submit "Create Style", class: "btn btn-success" %>
+		<% end %>
+	</div>
+</div>
