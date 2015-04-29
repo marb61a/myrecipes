@@ -1,24 +1,33 @@
+MyRecipes(TastyRecipes) Ruby on Rails App with Testing
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Ruby Gems Installed in MyRecipes(TastyRecipes)
+Gems:
 
+sqlite3
+rails_12factor (heroku deployment)
+bootstrap-sass
+carrierwave
+mini_magick
+will_paginate
+bootstrap-will_paginate
+bcrypt
+fog
+pry
 
-Welcome to your Rails project on Cloud9 IDE!
+*** Important
+pg(postgreSQL) will need to be uses in production (heroku deployment)
 
-To get started, just do the following:
+Technologies used in MyRecipes(TastyRecipes)
+MyRecipes(TastyRecipes) uses the following technologies:
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://ruby-space-marb.c9.io/).
+Rails 4.1.7
+Ruby 2.1.3
+PostgreSQL
+JQuery
+Bootstrap 3.3.2
+Heroku for deployment
+AWS - S3
 
-Happy coding!
-The Cloud9 IDE team
+***
+Testing is done with inbuilt Minitest
 
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
