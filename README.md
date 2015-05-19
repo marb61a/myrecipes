@@ -36,3 +36,5 @@ _**Important**_
 
 Testing is done with inbuilt Minitest
 
+The site is live at
+http://railstastyrecipes.herokuapp.com
